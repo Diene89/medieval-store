@@ -4,7 +4,7 @@ import connection from './connection';
 
 const TABLE = 'Trybesmith.Products';
 
-const create = async (product: IProduct): Promise<IProduct> => {
+export const create = async (product: IProduct): Promise<IProduct> => {
   const { name, amount } = product;
   const query = `INSERT INTO ${TABLE} (name, amount) VALUES (?, ?)`;
   const [{ insertId: id }] = await connection.query<ResultSetHeader>(query, [name, amount]);
@@ -12,4 +12,8 @@ const create = async (product: IProduct): Promise<IProduct> => {
   return newProduct;
 };
 
-export default create;
+export const listAll = async (): Promise<IProduct[]> => {
+  const query = `SELECT * FROM ${TABLE}`;
+  const [products] = await connection.query(query);
+  return products as IProduct[];
+};

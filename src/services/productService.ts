@@ -1,11 +1,14 @@
 import { IProduct } from '../interfaces/productInterface';
 import validateProduct from '../validations/productValidation';
-import productModel from '../models/productModel';
+import * as productModel from '../models/productModel';
 
-const create = async (product: IProduct) => {
+export const create = async (product: IProduct) => {
   validateProduct(product);
-  const newProduct = await productModel(product);
+  const newProduct = await productModel.create(product);
   return { code: 201, newProduct };
 };
 
-export default create;
+export const listAll = async () => {
+  const products = await productModel.listAll();
+  return { code: 200, products };
+};

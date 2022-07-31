@@ -1,13 +1,16 @@
 import { Request, Response } from 'express';
 // import { IProduct } from '../interfaces/productInterface';
-import productService from '../services/productService';
+import * as productService from '../services/productService';
 
-const create = async (req: Request, res: Response) => {
+export const create = async (req: Request, res: Response) => {
   const product = req.body;
   console.log('product', product);
   
-  const { code, newProduct } = await productService(product);
+  const { code, newProduct } = await productService.create(product);
   return res.status(code).json(newProduct);
 };
 
-export default create;
+export const listAll = async (_req: Request, res: Response) => {
+  const { code, products } = await productService.listAll();
+  return res.status(code).json(products);
+};
