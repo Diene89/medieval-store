@@ -3,7 +3,7 @@ import { IUser } from '../interfaces/userInterface';
 
 const validateProduct = (data: IUser): ValidationResult => {
   const schema = Joi.object({
-    username: Joi.string().required(),
+    username: Joi.string().min(3).required(),
     classe: Joi.string().required(),
     level: Joi.number().required(),
     password: Joi.required(),

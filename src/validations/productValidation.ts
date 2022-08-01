@@ -3,10 +3,11 @@ import { IProduct } from '../interfaces/productInterface';
 
 const validateProduct = (data: IProduct): ValidationResult => {
   const schema = Joi.object({
-    name: Joi.string().required(),
-    amount: Joi.string().required(),
+    name: Joi.string().min(3).required(),
+    amount: Joi.string().min(3).required(),
   });
   const { error, value } = schema.validate(data);
+  console.log('meu erroooooooo', error);
   if (error) throw error;
   return value;
 };
