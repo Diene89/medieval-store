@@ -12,5 +12,4 @@ const create = async (user: IUser) => {
   const token = createToken(user.username);
   return { code: 201, token };
 };
-
 export default create;
