@@ -1,4 +1,4 @@
-import orderModel from '../models/orderModel';
+import orderModel from '../models/repository/orderModel';
 
 const listAll = async () => {
   const orders = await orderModel();

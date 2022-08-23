@@ -1,6 +1,6 @@
 import { ResultSetHeader } from 'mysql2';
-import { IUser } from '../interfaces/userInterface';
-import connection from './connection';
+import { IUser } from '../entitites/interfaces/IUser';
+import connection from '../Connection';
 
 const TABLE = 'Trybesmith.Users';
 

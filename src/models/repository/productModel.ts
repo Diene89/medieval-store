@@ -1,6 +1,6 @@
 import { ResultSetHeader } from 'mysql2';
-import { IProduct } from '../interfaces/productInterface';
-import connection from './connection';
+import { IProduct } from '../entitites/interfaces/IProduct';
+import connection from '../Connection';
 
 const TABLE = 'Trybesmith.Products';
 

@@ -1,6 +1,6 @@
-import { IUser } from '../interfaces/userInterface';
+import { IUser } from '../models/entitites/interfaces/IUser';
 import validateUser from '../validations/userValidation';
-import * as userModel from '../models/userModel';
+import * as userModel from '../models/repository/userModel';
 import createToken from '../middlewares/token';
 
 const create = async (user: IUser) => {

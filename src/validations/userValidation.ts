@@ -1,5 +1,5 @@
 import Joi, { ValidationResult } from 'joi';
-import { IUser } from '../interfaces/userInterface';
+import { IUser } from '../models/entitites/interfaces/IUser';
 
 const validateProduct = (data: IUser): ValidationResult => {
   const schema = Joi.object({

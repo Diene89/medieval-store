@@ -1,5 +1,5 @@
-import { IOrder } from '../interfaces/orderInterface';
-import connection from './connection';
+import { IOrder } from '../entitites/interfaces/IOrder';
+import connection from '../Connection';
 
 export const listAll = async (): Promise<IOrder[]> => {
   const query = `
@@ -11,7 +11,6 @@ export const listAll = async (): Promise<IOrder[]> => {
     ORDER BY orders.userId
   `;
   const [orders] = await connection.query(query);
-  console.log('aquiiiiiiiii', orders);
   
   return orders as IOrder[];
 };

@@ -1,6 +1,6 @@
-import { IProduct } from '../interfaces/productInterface';
+import { IProduct } from '../models/entitites/interfaces/IProduct';
 import validateProduct from '../validations/productValidation';
-import * as productModel from '../models/productModel';
+import * as productModel from '../models/repository/productModel';
 
 export const create = async (product: IProduct) => {
   validateProduct(product);
